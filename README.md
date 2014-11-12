@@ -52,7 +52,7 @@ Add accounts-ui package for authentication.
 meteor add accounts-ui accounts-password
 ```
 
-Make app secure
+Make app secure.
 
 ```
 meteor remove insecure
@@ -63,4 +63,14 @@ Add publish-subscribe.
 ```
 meteor remove autopublish
 ```
+
+## Wish List
+
+It will be nice to add following features as long as it does not overcomplicate the start app.
+
+- Charting library to show a simple dashboard of user count, completed tasks, online users, etc.
+- Web usage analytics
+- Star ratings / voting for tasks
+- Pagination
+- Search
 
