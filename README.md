@@ -26,6 +26,11 @@ Semantic UI
 
 http://semantic-ui.com | https://github.com/Semantic-Org/Semantic-UI
 
+HighCharts (FREE FOR NON-COMMERCIAL)
+
+http://www.highcharts.com/
+
+
 ## Setup instructions
 
 Install meteor framework. All commands use terminal.
@@ -73,7 +78,7 @@ meteor add maazalik:highcharts
 ## Extended Features
 
 - Semantic UI Forms, Dividers, Labels, Buttons, Segments
-- HighCharts to show a simple reactive dashboard tasks completion
+- HighCharts to show a simple reactive dashboard for task completion
 
 ## Wish List
 
