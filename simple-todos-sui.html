@@ -1,5 +1,5 @@
 <head>
-  <title>Todo List</title>
+  <title>Todo List Starter App| Meteor and Semantic UI</title>
 </head>
 
 <body>
@@ -11,12 +11,12 @@
       <h1 class="ui header">
         <i class="settings icon"></i>
         <div class="content">
-          Todo List Sample
+          Simple Todo List Starter App
           <div class="sub header">
             Using Semantic UI
             <div class="ui purple label">
-              Active Tasks
-              <div class="detail">{{incompleteCount}}</div>
+              New Tasks
+              <div class="detail"><i class="star icon"></i> {{incompleteCount}}</div>
             </div>
           </div>
         </div>
@@ -25,10 +25,10 @@
       {{#if currentUser}}
       <form class="new-task ui form">
         <div class="field">
-          <label>Trend</label>
+          <label>New Task</label>
           <div class="ui left labled icon input">
             <input type="text" name="text" placeholder="Type to add new task" />
-            <i class="user icon"></i>
+            <i class="add sign box icon"></i>
             <div class="ui corner label">
               <i class="icon asterisk"></i>
             </div> <!-- corner -->
