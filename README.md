@@ -77,8 +77,8 @@ meteor add maazalik:highcharts
 
 ## Extended Features
 
-- Semantic UI Forms, Dividers, Labels, Buttons, Segments
-- HighCharts to show a simple reactive dashboard for task completion
+- Semantic UI Forms, Dividers, Labels, Buttons, Segments, Modal.
+- HighCharts to show a simple reactive dashboard for task completion.
 
 ## Wish List
 
