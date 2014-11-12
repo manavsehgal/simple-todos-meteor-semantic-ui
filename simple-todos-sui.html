@@ -1,0 +1,76 @@
+<head>
+  <title>Todo List</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+
+      <h1 class="ui header">
+        <i class="settings icon"></i>
+        <div class="content">
+          Todo List Sample
+          <div class="sub header">
+            Using Semantic UI
+            <div class="ui purple label">
+              Active Tasks
+              <div class="detail">{{incompleteCount}}</div>
+            </div>
+          </div>
+        </div>
+      </h1>
+
+      {{#if currentUser}}
+      <form class="new-task ui form">
+        <div class="field">
+          <label>Trend</label>
+          <div class="ui left labled icon input">
+            <input type="text" name="text" placeholder="Type to add new task" />
+            <i class="user icon"></i>
+            <div class="ui corner label">
+              <i class="icon asterisk"></i>
+            </div> <!-- corner -->
+          </div> <!-- icon -->
+        </div><!-- field -->
+      </form>
+      {{/if}}
+      
+      <div class="inline field">
+        <div class="hide-completed ui toggle checkbox">
+          <input type="checkbox" checked="{{hideCompleted}}" />
+          <label>Hide Completed Tasks</label>
+        </div>
+      </div>
+      
+      {{> loginButtons}}
+    
+    </header>
+
+    <ul>
+      {{#each tasks}}
+        {{> task}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
+
+<template name="task">
+  <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
+    <button class="delete">X</button>
+
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+
+    <span class="text"><span class="ui label"><i class="user icon"></i> {{username}}</span> {{text}}</span>
+
+    {{#if isOwner}}
+      <div class="toggle-private ui circular red mini button">
+        {{#if private}}
+          Private
+        {{else}}
+          Public
+        {{/if}}
+      </div>
+    {{/if}}
+
+  </li>
+</template>
