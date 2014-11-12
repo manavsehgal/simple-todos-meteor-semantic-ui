@@ -64,13 +64,22 @@ Add publish-subscribe.
 meteor remove autopublish
 ```
 
+Add HighCharts package
+
+```
+meteor add maazalik:highcharts
+```
+
+## Extended Features
+
+- Semantic UI Forms, Dividers, Labels, Buttons
+- HighCharts to show a simple reactive dashboard tasks completion.
+
 ## Wish List
 
-It will be nice to add following features as long as it does not overcomplicate the start app.
+It will be nice to add following features as long as we are not complicating the starter app.
 
-- Charting library to show a simple dashboard of user count, completed tasks, online users, etc.
 - Web usage analytics
 - Star ratings / voting for tasks
 - Pagination
 - Search
-

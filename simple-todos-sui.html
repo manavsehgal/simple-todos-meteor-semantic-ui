@@ -15,8 +15,8 @@
           <div class="sub header">
             Using Semantic UI
             <div class="ui purple label">
-              New Tasks
-              <div class="detail"><i class="star icon"></i> {{incompleteCount}}</div>
+              Private Tasks 
+              <div class="detail"><i class="lock icon"></i> {{privateCount}}</div>
             </div>
           </div>
         </div>
@@ -53,6 +53,13 @@
         {{> task}}
       {{/each}}
     </ul>
+    
+    <div class="ui horizontal icon divider">
+      <i class="circular star icon"></i>
+    </div>
+
+    {{> completionGuageDashboard}}
+
   </div>
 </body>
 
@@ -75,4 +82,13 @@
     {{/if}}
 
   </li>
+</template>
+
+<template name="completionGuageDashboard">
+  <div class="ui fluid stacked segment">
+
+    <div class="ui top attached label">Completion Status</div>
+    <p>The chart is reactive. Set "own" task checkbox complete/incomplete to see chart update.</p>
+    <div id="completion-gauge" style="width: 100%; height: 200px;"></div>
+  </div>
 </template>

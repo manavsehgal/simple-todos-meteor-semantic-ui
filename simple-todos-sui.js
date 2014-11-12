@@ -34,7 +34,21 @@ if (Meteor.isClient) {
     },
   
     incompleteCount: function () {
-      return Tasks.find({checked: {$ne: true}}).count();
+      var count = Tasks.find({checked: {$ne: true}}).count();
+      Session.set("incompleteTasks", parseInt(count));
+      return count;
+    },
+  
+    completeCount: function () {
+      var count = Tasks.find({checked: {$ne: false}}).count();
+      Session.set("completeTasks", parseInt(count));
+      return count;
+    },
+  
+    privateCount: function () {
+      var count = Tasks.find({private: {$ne: false}}).count();
+      Session.set("privateTasks", parseInt(count));
+      return count;
     }
     
   }); // Template.body.helpers
@@ -94,6 +108,13 @@ if (Meteor.isClient) {
     passwordSignupFields: "USERNAME_ONLY"
   });
 
+  Template.completionGuageDashboard.rendered = function () {
+    this.autorun(function (c) {
+      completionGuage();
+    });
+  }
+
+
 } // if (Meteor.isClient)
 
 Meteor.methods({
@@ -145,3 +166,89 @@ Meteor.methods({
   
 });
 
+
+function completionGuage() {
+    
+    var completionData = new Array();
+    
+    completionData[0] = 0;
+    var totalTasks = 0;
+    
+    completionData[0] = Session.get('completeTasks');
+    totalTasks = completionData[0] + Session.get('incompleteTasks');
+
+    $('#completion-gauge').highcharts({
+        chart: {
+            type: 'solidgauge'
+        },
+
+        title: null,
+
+        pane: {
+            center: ['50%', '85%'],
+            size: '140%',
+            startAngle: -90,
+            endAngle: 90,
+            background: {
+                backgroundColor: '#EEE',
+                innerRadius: '60%',
+                outerRadius: '100%',
+                shape: 'arc'
+            }
+        },
+
+        tooltip: {
+            enabled: false
+        },
+
+        yAxis: {
+            min: 0,
+            max: totalTasks,
+            title: {
+                text: 'Completion'
+            },
+
+            stops: [
+                [0.1, '#55BF3B'],
+                [0.5, '#DDDF0D'],
+                [0.9, '#DF5353']
+            ],
+            lineWidth: 0,
+            minorTickInterval: null,
+            tickPixelInterval: 400,
+            tickWidth: 0,
+            title: {
+                y: -70
+            },
+            labels: {
+                y: 16
+            }
+        },
+
+        plotOptions: {
+            solidgauge: {
+                dataLabels: {
+                    y: 5,
+                    borderWidth: 0,
+                    useHTML: true
+                }
+            }
+        },
+
+        credits: {
+            enabled: false
+        },
+
+        series: [{
+            name: 'Completed',
+            data: completionData,
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:#7e7e7e">{y}</span><br/>' +
+                    '<span style="font-size:12px;color:silver">Tasks</span></div>'
+            },
+            tooltip: {
+                valueSuffix: ' Tasks'
+            }
+        }]
+    });
+}
