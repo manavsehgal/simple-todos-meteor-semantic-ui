@@ -15,6 +15,16 @@ Semantic UI is a refreshing alternative to Twitter's popular Bootstrap framework
 
 This project extends Meteor's simple-todos app that results from their [official tutorial](https://www.meteor.com/install).
 
+# Dependencies
+
+Meteor
+
+https://www.meteor.com
+
+Semantic UI
+
+http://semantic-ui.com | https://github.com/Semantic-Org/Semantic-UI
+
 # Setup instructions
 
 Install meteor framework. All commands use terminal.
