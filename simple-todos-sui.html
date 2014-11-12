@@ -11,7 +11,7 @@
       <h1 class="ui header">
         <i class="settings icon"></i>
         <div class="content">
-          Simple Todo List Starter App
+          Simple Todo Starter App
           <div class="sub header">
             Using Semantic UI
             
@@ -52,20 +52,22 @@
           <label>Hide Completed Tasks</label>
         </div>
       </div>
-      
-      {{> loginButtons}}
 
-      <div class="ui small modal">
+      {{> loginButtons}}
+      
+
+      <div class="ui small about modal">
         <i class="close icon"></i>
         <div class="header">
           Welcome
         </div>
         <div class="content">
           <div class="left">
-            This starter app extends Meteor tutorial - Simple Todos. It uses HighCharts and Semantic UI.
+            <b>This starter app extends Meteor tutorial "Simple Todos". It adds features from HighCharts and Semantic UI libraries.</b>
+            <p>Shared with love by <a href="https://github.com/open-start">OpenStart.co</a></p>
           </div>
           <div class="right">
-            Shared with love by OpenStart.co
+            <img class="rounded ui image" src="https://avatars0.githubusercontent.com/u/9691087?v=3&s=200">
           </div>
         </div>
         <div class="actions">
@@ -88,7 +90,9 @@
     </div>
 
     {{> completionGuageDashboard}}
-
+    
+    <br> <br>
+    
   </div>
 </body>
 
