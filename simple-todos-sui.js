@@ -79,6 +79,7 @@ if (Meteor.isClient) {
   // For Semantic UI JS features
   Template.body.rendered = function(){
     $('.ui.checkbox').checkbox();
+    $('.small.modal').modal('show');
   }
   
   Template.task.events({
