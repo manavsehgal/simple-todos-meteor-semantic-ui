@@ -245,7 +245,7 @@ function completionGuage() {
             data: completionData,
             dataLabels: {
                 format: '<div style="text-align:center"><span style="font-size:25px;color:#7e7e7e">{y}</span><br/>' +
-                    '<span style="font-size:12px;color:silver">Tasks</span></div>'
+                    '<span style="font-size:12px;color:silver">Tasks Complete</span></div>'
             },
             tooltip: {
                 valueSuffix: ' Tasks'
