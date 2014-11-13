@@ -33,7 +33,7 @@
       <h1 class="ui header">
         <i class="settings icon"></i>
         <div class="content">
-          Simple Todo Starter App
+          Simple Todos Starter App
           <div class="sub header">
             Using Semantic UI
             
@@ -103,7 +103,7 @@
 <template name="task">
   <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
     <div class="inline field">
-      <div class="delete mini circular ui red icon button"><i class="close icon"></i></div>
+      <div class="delete"><i class="close icon"></i></div>
       <div class="ui checkbox">
         <input id="chk{{_id}}" type="checkbox" checked="{{checked}}" class="toggle-checked" />
         <label for="chk{{_id}}"><span class="text"><span class="ui label"><i class="user icon"></i> {{username}}</span> {{text}}</span></label>
