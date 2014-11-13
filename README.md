@@ -75,6 +75,12 @@ Add HighCharts package
 meteor add maazalik:highcharts
 ```
 
+## Open Issues, Learning
+
+- **Responsive grid.** Semantic UI grid seems to respond to screen size by scaling horizontally. Does not automatically occupy next row, when screen size is smaller.
+- **Session variables.** Calculating private task count seems to behave erratically. Chart does not display total task count on hosted version, does so on local.
+- **Reusable chart code.** Chart configuration method has hard-coding. Can it be parametrized to instantiate multiple charts using single method call?
+
 ## Extended Features
 
 - Semantic UI Forms, Dividers, Labels, Buttons, Segments, Modal.
