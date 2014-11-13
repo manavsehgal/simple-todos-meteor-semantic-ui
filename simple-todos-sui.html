@@ -37,7 +37,7 @@
           <div class="sub header">
             Using Semantic UI
             
-            <div class="ui green label">
+            <div class="ui teal label">
               <i class="star icon"></i> {{incompleteCount}} New
             </div>
             
@@ -45,7 +45,7 @@
               <i class="checked checkbox icon"></i> {{completeCount}} Done
             </div>
 
-            <div class="ui red label">
+            <div class="ui black label">
               <i class="lock icon"></i> {{privateCount}} Pvt
             </div>
 
@@ -67,11 +67,13 @@
         </div><!-- field -->
       </form>
       {{/if}}
-      
-      <div class="inline field">
-        <div class="hide-completed ui toggle checkbox">
-          <input type="checkbox" checked="{{hideCompleted}}" />
-          <label>Hide Completed Tasks</label>
+
+      <div class="ui form">
+        <div class="inline field">
+          <div class="hide-completed ui toggle checkbox">
+            <input id="chk1" type="checkbox" checked="{{hideCompleted}}" />
+            <label for="chk1">Hide Completed Tasks</label>
+          </div>
         </div>
       </div>
 
@@ -81,7 +83,9 @@
 
     <ul>
       {{#each tasks}}
+    <div class="ui form">
         {{> task}}
+    </div>
       {{/each}}
     </ul>
     
@@ -98,22 +102,23 @@
 
 <template name="task">
   <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
-    <button class="delete">X</button>
-
-    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
-
-    <span class="text"><span class="ui label"><i class="user icon"></i> {{username}}</span> {{text}}</span>
-
-    {{#if isOwner}}
-      <div class="toggle-private ui circular red mini button">
-        {{#if private}}
-          Private
-        {{else}}
-          Public
-        {{/if}}
+    <div class="inline field">
+      <div class="delete mini circular ui red icon button"><i class="close icon"></i></div>
+      <div class="ui checkbox">
+        <input id="chk{{_id}}" type="checkbox" checked="{{checked}}" class="toggle-checked" />
+        <label for="chk{{_id}}"><span class="text"><span class="ui label"><i class="user icon"></i> {{username}}</span> {{text}}</span></label>
       </div>
-    {{/if}}
 
+      {{#if isOwner}}
+        <div class="toggle-private ui black mini button">
+          {{#if private}}
+          <i class="lock icon"></i>
+          {{else}}
+          <i class="unlock icon"></i>
+          {{/if}}
+        </div>
+      {{/if}}
+    </div>
   </li>
 </template>
 
