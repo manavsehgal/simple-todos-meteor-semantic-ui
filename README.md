@@ -39,7 +39,7 @@ Install meteor framework. All commands use terminal.
 curl https://install.meteor.com/ | sh
 ```
 
-Pull/clone/fork this repository.
+Fork this repository.
 
 ```
 https://github.com/open-start/simple-todos-meteor-semantic-ui.git 
